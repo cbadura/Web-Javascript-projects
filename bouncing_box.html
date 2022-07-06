@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute;
+    left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold;
+    color: #999;" >badura_c</div>
+  <script type="text/javascript">
+    let box = document.getElementById("my_bouncing_box");
+    let direction = [1, 1];
+    
+    let intFrameWidth = window.innerWidth - 100;
+    let intFrameHeight = window.innerHeight - 100;
+
+    let interval = setInterval(bounce, 5);
+
+    function bounce() {
+      if(parseInt(box.style.left) >= intFrameWidth || parseInt(box.style.left) < 0) {
+        direction[0] = direction[0] * -1;
+      }
+
+      if(parseInt(box.style.top) >= intFrameHeight || parseInt(box.style.top) < 0) {
+        direction[1] = direction[1] * -1;
+      }
+
+      box.style.left = parseInt(box.style.left) + direction[0] + "px";
+      box.style.top = parseInt(box.style.top) + direction[1] + "px";
+    }
+  </script>    
+  </body>
+</html>
